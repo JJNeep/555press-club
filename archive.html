@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Press Archive</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>📚 Press Archive</h1>
+        <a href="/">← Back to Home</a>
+    </header>
+
+    <div id="archive-container">
+        <!-- PDFs will load here -->
+    </div>
+
+    <script>
+        fetch('https://onedrive.live.com/download?resid=YOUR_JSON_FILE_ID&authkey=YOUR_AUTH_KEY')
+            .then(response => response.json())
+            .then(data => {
+                const sorted = data.pdfs.sort((a, b) => 
+                    new Date(b.date) - new Date(a.date)
+                );
+                
+                let html = '';
+                sorted.forEach(pdf => {
+                    html += `
+                        <div class="pdf-item">
+                            <h3>${pdf.name.replace('PRESS-', '').replace('.pdf', '')}</h3>
+                            <iframe src="${pdf.embedUrl}" width="100%" height="500px"></iframe>
+                            <p>Published: ${pdf.date}</p>
+                        </div>
+                    `;
+                });
+                document.getElementById('archive-container').innerHTML = html;
+            });
+    </script>
+</body>
+</html>
