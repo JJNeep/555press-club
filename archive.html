@@ -15,7 +15,7 @@
     </div>
 
     <script>
-        fetch('https://drive.google.com/uc?export=download&id=15q40MfNqzKdD6_EasoaS2qyNdu3f_OhV')
+        fetch('https://cors-anywhere.herokuapp.com/https://drive.google.com/uc?export=download&id=YOUR_FILE_ID')
             .then(response => response.json())
             .then(data => {
                 const sorted = data.pdfs.sort((a, b) => 
