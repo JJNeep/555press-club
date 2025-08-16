@@ -37,18 +37,14 @@
 
     <!-- Fetch and display latest PDF -->
     <script>
-        // Load press-data.json from OneDrive
-        fetch('https://onedrive.live.com/download?resid=YOUR_JSON_FILE_ID&authkey=YOUR_AUTH_KEY')
-            .then(response => response.json())
-            .then(data => {
-                const latest = data.pdfs.sort((a, b) => 
-                    new Date(b.date) - new Date(a.date)
-                )[0]; // Get newest PDF
-                
-                document.getElementById('latest-title').textContent = 
-                    latest.name.replace('PRESS-', '').replace('.pdf', '');
-                document.getElementById('latest-pdf').src = latest.embedUrl;
-            });
+        // Load press-data.json from Google Drive
+        fetch('https://drive.google.com/uc?export=download&id=YOUR_JSON_FILE_ID')
+  .then(response => response.json())
+  .then(data => {
+    // Render PDFs as before
+    const latestPdf = data.pdfs[0];
+    document.getElementById('latest-pdf').src = latestPdf.embedUrl;
+  });
     </script>
 </body>
 </html>
