@@ -38,9 +38,9 @@
     <!-- Fetch and display latest PDF -->
     <script>
         // Load press-data.json from Google Drive
-        fetch('https://drive.google.com/uc?export=download&id=15q40MfNqzKdD6_EasoaS2qyNdu3f_OhV')
+        fetch('https://cors-anywhere.herokuapp.com/https://drive.google.com/uc?export=download&id=YOUR_FILE_ID')
   .then(response => response.json())
-  .then(data => {
+  .then(data => console.log(data));
     // Render PDFs as before
     const latestPdf = data.pdfs[0];
     document.getElementById('latest-pdf').src = latestPdf.embedUrl;
