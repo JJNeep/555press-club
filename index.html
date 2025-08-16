@@ -39,11 +39,15 @@
     <script>
         // Load press-data.json from Google Drive
         fetch('https://script.google.com/macros/s/AKfycbylZSQ-VuhFx2o3VmWRElqE0tavlq11lFbDrcu_Z2wmRh-Ba51VBCwWUgVuRzCTdxHL/exec')
-  .then(response => response.json())
-  .then(data => console.log(data));
-    // Render PDFs as before
-    const latestPdf = data.pdfs[0];
-    document.getElementById('latest-pdf').src = latestPdf.embedUrl;
+.then(response => response.json())
+    .then(data => {
+      console.log(data); // Debugging
+      
+      // Render PDFs - THIS MUST BE INSIDE THE .then() BLOCK
+      const latestPdf = data.pdfs[0];
+      document.getElementById('latest-pdf').src = latestPdf.embedUrl;
+    })
+    .catch(error => console.error('Error loading PDFs:', error));
     </script>
 </body>
 </html>
