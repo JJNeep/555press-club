@@ -20,7 +20,7 @@
             .then(data => {
                 const sorted = data.pdfs.sort((a, b) => 
                     new Date(b.date) - new Date(a.date)
-                                              });
+                                              );
                 
                 let html = '';
                 sorted.forEach(pdf => {
@@ -33,6 +33,7 @@
                     `;
                 });
                 document.getElementById('archive-container').innerHTML = html;
+            });
     </script>
 </body>
 </html>
