@@ -4,9 +4,6 @@ body {
     margin: 0 auto;
     padding: 20px;
     line-height: 1.6;
-    height: 100vh;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
 }
 
 header {
@@ -41,9 +38,4 @@ header {
 footer {
     text-align: center;
     margin-top: 40px;
-}
-
-.pdf-page {
-    height: 100vh;
-    scroll-snap-align: start;
 }
