@@ -39,3 +39,21 @@ footer {
     text-align: center;
     margin-top: 40px;
 }
+
+.responsive-iframe-container {
+    position: relative;
+    width: 100%;
+    padding-top: 141.42%; /* Aspect ratio for A4 (1:1.4142) */
+    margin: 0 auto;
+    max-width: 800px; /* Optional max width */
+}
+
+    /* Iframe that fills the container */
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
