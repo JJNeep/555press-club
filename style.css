@@ -70,3 +70,17 @@ footer {
       border: 1px solid #ddd;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
+
+html, body {
+      transform: scale(0.5);
+      transform-origin: 0 0;
+      width: 200%; /* Counteract the scaling */
+      height: 200vh;
+      margin: 0;
+      overflow-x: hidden;
+    }
+    
+    /* Fix for position:fixed elements */
+    body > * {
+      position: relative; /* Override fixed positioning */
+    }
