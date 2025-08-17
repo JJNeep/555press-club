@@ -78,7 +78,7 @@ a:hover {
 
 .pdf-container {
     width: 100%;
-    max-width: 800px;
+    max-width: 400px;
     aspect-ratio: 1/1.4142; /* A4 aspect ratio */
     margin: 0 auto;
     max-height: 80vh; /* Ensure it fits in the viewport */
